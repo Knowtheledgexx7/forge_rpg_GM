@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(51, 100%, 50%);
+  --primary-foreground: hsl(240, 10%, 3.9%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+
+  /* Star Wars Theme Colors */
+  --space-dark: hsl(240, 40%, 4%);
+  --space-blue: hsl(240, 30%, 11%);
+  --imperial-gray: hsl(240, 10%, 17%);
+  --panel-gray: hsl(240, 10%, 25%);
+  --corporate-gold: hsl(51, 100%, 50%);
+  --empire-red: hsl(348, 83%, 47%);
+  --rebel-orange: hsl(30, 100%, 50%);
+  --success-green: hsl(120, 100%, 63%);
+  --warning-yellow: hsl(51, 100%, 50%);
+  --danger-red: hsl(348, 100%, 51%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(51, 100%, 50%);
+  --primary-foreground: hsl(240, 10%, 3.9%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background: var(--space-dark);
+    color: hsl(0, 0%, 98%);
+  }
+}
+
+/* Star Wars Theme Utilities */
+.glow-text {
+  text-shadow: 0 0 10px currentColor;
+}
+
+.panel-glow {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3), inset 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+.scroll-custom::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-custom::-webkit-scrollbar-track {
+  background: var(--imperial-gray);
+}
+
+.scroll-custom::-webkit-scrollbar-thumb {
+  background: var(--corporate-gold);
+  border-radius: 4px;
+}
+
+.star-field {
+  background: 
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 160px 30px, #ddd, transparent),
+    var(--space-dark);
+  background-size: 200px 100px;
+  animation: stars 20s linear infinite;
+}
+
+@keyframes stars {
+  from { transform: translateX(0); }
+  to { transform: translateX(-200px); }
+}
+
+.market-ticker {
+  animation: scroll-left 30s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Custom color classes */
+.bg-space-dark { background-color: var(--space-dark); }
+.bg-space-blue { background-color: var(--space-blue); }
+.bg-imperial-gray { background-color: var(--imperial-gray); }
+.bg-panel-gray { background-color: var(--panel-gray); }
+.bg-corporate-gold { background-color: var(--corporate-gold); }
+.bg-empire-red { background-color: var(--empire-red); }
+.bg-rebel-orange { background-color: var(--rebel-orange); }
+.bg-success-green { background-color: var(--success-green); }
+.bg-warning-yellow { background-color: var(--warning-yellow); }
+.bg-danger-red { background-color: var(--danger-red); }
+
+.text-space-dark { color: var(--space-dark); }
+.text-space-blue { color: var(--space-blue); }
+.text-imperial-gray { color: var(--imperial-gray); }
+.text-panel-gray { color: var(--panel-gray); }
+.text-corporate-gold { color: var(--corporate-gold); }
+.text-empire-red { color: var(--empire-red); }
+.text-rebel-orange { color: var(--rebel-orange); }
+.text-success-green { color: var(--success-green); }
+.text-warning-yellow { color: var(--warning-yellow); }
+.text-danger-red { color: var(--danger-red); }
+
+.border-corporate-gold { border-color: var(--corporate-gold); }
+.border-empire-red { border-color: var(--empire-red); }
+.border-rebel-orange { border-color: var(--rebel-orange); }
+.border-success-green { border-color: var(--success-green); }
+.border-warning-yellow { border-color: var(--warning-yellow); }
+.border-danger-red { border-color: var(--danger-red); }
+
+/* Font families */
+.font-orbitron { font-family: 'Orbitron', sans-serif; }
+.font-code { font-family: 'Source Code Pro', monospace; }
+
+/* Hover effects */
+.hover\:bg-corporate-gold\/20:hover { background-color: rgba(255, 215, 0, 0.2); }
+.hover\:bg-corporate-gold\/80:hover { background-color: rgba(255, 215, 0, 0.8); }
+.hover\:bg-gray-600:hover { background-color: rgb(75, 85, 99); }
+
+/* Focus effects */
+.focus\:ring-corporate-gold:focus { 
+  --tw-ring-color: var(--corporate-gold);
+}
