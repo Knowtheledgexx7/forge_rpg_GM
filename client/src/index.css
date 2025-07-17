@@ -24,7 +24,6 @@
   --ring: hsl(240, 4.9%, 83.9%);
   --radius: 0.5rem;
 
-  /* Star Wars Theme Colors */
   --space-dark: hsl(240, 40%, 4%);
   --space-blue: hsl(240, 30%, 11%);
   --imperial-gray: hsl(240, 10%, 17%);
@@ -62,7 +61,8 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border;
+    border-color: var(--border);
   }
 
   body {
@@ -84,18 +84,16 @@
 .scroll-custom::-webkit-scrollbar {
   width: 8px;
 }
-
 .scroll-custom::-webkit-scrollbar-track {
   background: var(--imperial-gray);
 }
-
 .scroll-custom::-webkit-scrollbar-thumb {
   background: var(--corporate-gold);
   border-radius: 4px;
 }
 
 .star-field {
-  background: 
+  background:
     radial-gradient(2px 2px at 20px 30px, #eee, transparent),
     radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
     radial-gradient(1px 1px at 90px 40px, #fff, transparent),
@@ -120,7 +118,7 @@
   100% { transform: translateX(-100%); }
 }
 
-/* Custom color classes */
+/* Color Utility Classes */
 .bg-space-dark { background-color: var(--space-dark); }
 .bg-space-blue { background-color: var(--space-blue); }
 .bg-imperial-gray { background-color: var(--imperial-gray); }
@@ -150,16 +148,14 @@
 .border-warning-yellow { border-color: var(--warning-yellow); }
 .border-danger-red { border-color: var(--danger-red); }
 
-/* Font families */
+/* Fonts & Effects */
 .font-orbitron { font-family: 'Orbitron', sans-serif; }
 .font-code { font-family: 'Source Code Pro', monospace; }
 
-/* Hover effects */
 .hover\:bg-corporate-gold\/20:hover { background-color: rgba(255, 215, 0, 0.2); }
 .hover\:bg-corporate-gold\/80:hover { background-color: rgba(255, 215, 0, 0.8); }
 .hover\:bg-gray-600:hover { background-color: rgb(75, 85, 99); }
 
-/* Focus effects */
-.focus\:ring-corporate-gold:focus { 
+.focus\:ring-corporate-gold:focus {
   --tw-ring-color: var(--corporate-gold);
 }
